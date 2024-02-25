@@ -11,24 +11,22 @@ Class UserController extends Controller {
     public function __construct(Request $request){
         $this->request = $request;
     }
-    public function getUsers(){
-        $users = User::all();
-        return $this->response($users, 200);
+
+      /**
+     * Return the list of users
+     * @return Illuminate\Http\Response
+     */
+    public function index()
+    {
+    $users = User::all();
+      // return $this->successResponse($users);
+      return response()->json($users, 200); 
     }
 
     public function getUsers(){
         $users = User::all();
-        return $this->response($users, 200);
-        }
-       }
-       /**
-        * Return the list of users
-        * @return Illuminate\Http\Response
-        */
-        public function index()
-        {
-        $users = User::all();
-        return $this->successResponse($users);
-        
-        }
+       // return $this->response($users, 200);
+       return response()->json($users, 200);
+    }
 }
+  

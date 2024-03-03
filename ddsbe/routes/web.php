@@ -20,11 +20,13 @@ $router->get('/', function () use ($router) {
 
 
 // more simple routes
-$router->get('/users',['uses' => 'UserController@getUsers']);
-$router->get('/users', 'UserController@index'); // get all users records
-$router->post('/users', 'UserController@add'); // create new user records
-$router->get('/users/{id}', 'UserController@show'); // get user by id
-$router->put('/users/{id}', 'UserController@update'); // update user record
-$router->patch('/users/{id}', 'UserController@update'); // update user record
-$router->delete('/users/{id}', 'UserController@delete'); // delete record
+//$router->get('/users', 'UserController@index'); // get all users records
+
+$router->get('/users',['uses' => 'UserController@getUsers']);  // get all users records
+$router->post('/users',['uses' => 'UserController@add']); // create new user records
+
+// $router->get('/users/{id}', 'UserController@show'); // get user by id
+// $router->put('/users/{id}', 'UserController@update'); // update user record
+// $router->patch('/users/{id}', 'UserController@update'); // update user record
+// $router->delete('/users/{id}', 'UserController@delete'); // delete record
 
